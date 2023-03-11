@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12">
+    <label for="server-name">Server Name</label>
+  </div>
+  <div class="col-12 mt-1">
+    <input [(ngModel)]="serverName" id="server-name" type="text" />
+  </div>
+</div>
+
+<div class="row mt-1">
+  <div class="col-12">
+    <button
+      class="btn btn-primary"
+      (click)="addServer()"
+      [disabled]="!!disableButton"
+    >
+      Add Server
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <p>{{ serverList[1] }}</p>
+  </div>
+</div>
