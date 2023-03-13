@@ -21,6 +21,14 @@
 
 <div class="row">
   <div class="col-12">
-    <p>{{ serverList[1] }}</p>
+    <p
+      [ngStyle]="{
+        'background-color': this.setInlineStyle()
+      }"
+      [ngClass]="serverParagraphClassStyles"
+      *ngFor="let server of serverList"
+    >
+      {{ server }}
+    </p>
   </div>
 </div>
