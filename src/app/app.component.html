@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1 class="text-primary">I'm in the app component</h1>
-            <hr>
+            <h3>Add new server or blueprints</h3>
         </div>
     </div>
-    <app-server-form/>
-    <app-server-lists/>
+
+    <app-server-form (addServerEvent)="onAddServer($event)"/>
+    <app-server *ngFor="let server of serversList" [server]="server"/>
 </div>

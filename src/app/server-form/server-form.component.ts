@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
+interface Server {
+  name: string;
+  content: string;
+}
 
 @Component({
   selector: 'app-server-form',
@@ -6,35 +11,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./server-form.component.scss'],
 })
 export class ServerFormComponent implements OnInit {
-  public disableButton = true;
-  public serverList: string[] = [''];
-  public serverName = '';
-  public serverParagraphClassStyles = {
-    denied: false,
-    success: true,
-  };
-  public inlineStyle = 'text-bg-success';
+  @Output() addServerEvent = new EventEmitter<Server>();
 
-  ngOnInit() {
-    this.buttonCooldown();
-  }
+  server: Server = { name: '', content: '' };
 
-  public setInlineStyle() {
-    this.inlineStyle = Math.random() < 0.5 ? 'green' : 'red';
-    return this.inlineStyle;
-  }
+  ngOnInit() {}
 
-  public addServer() {
-    this.serverParagraphClassStyles = {
-      success: Math.random() < 0.5,
-      denied: Math.random() < 0.5,
-    };
-    this.serverList?.push(this.serverName);
-  }
-
-  private buttonCooldown() {
-    setTimeout(() => {
-      this.disableButton = false;
-    }, 2000);
+  public addServer(server: Server) {
+    this.addServerEvent.emit(server);
   }
 }

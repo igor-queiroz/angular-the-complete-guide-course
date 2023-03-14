@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
 
+interface Server {
+  name: string;
+  content: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'the-basics';
+  serversList: Server[] = [];
+
+  public onAddServer(event: Server) {
+    this.serversList.push(event);
+  }
 }

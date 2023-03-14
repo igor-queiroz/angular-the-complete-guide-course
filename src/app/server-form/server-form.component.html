@@ -3,32 +3,26 @@
     <label for="server-name">Server Name</label>
   </div>
   <div class="col-12 mt-1">
-    <input [(ngModel)]="serverName" id="server-name" type="text" />
+    <input [(ngModel)]="server.name" id="server-name" type="text" />
+  </div>
+
+  <div class="col-12 mt-1">
+    <label for="server-content">Server Content</label>
+  </div>
+  <div class="col-12 mt-1">
+    <input [(ngModel)]="server.content" id="server-content" type="text" />
   </div>
 </div>
 
-<div class="row mt-1">
-  <div class="col-12">
-    <button
-      class="btn btn-primary"
-      (click)="addServer()"
-      [disabled]="!!disableButton"
-    >
+<div class="row mt-3">
+  <div class="col-2">
+    <button class="btn btn-primary" (click)="addServer(server)">
       Add Server
     </button>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <p
-      [ngStyle]="{
-        'background-color': this.setInlineStyle()
-      }"
-      [ngClass]="serverParagraphClassStyles"
-      *ngFor="let server of serverList"
-    >
-      {{ server }}
-    </p>
+  <div class="col-4">
+    <button class="btn btn-primary" (click)="addServer(server)">
+      Add Server Blueprint
+    </button>
   </div>
 </div>
