@@ -16,4 +16,12 @@ export class AppComponent {
   public onAddServer(event: Server) {
     this.serversList.push(event);
   }
+
+  public changedFirstServerName() {
+    this.serversList[0].name = 'Name Changed By Button';
+  }
+
+  public destroyServerComponent() {
+    this.serversList.pop();
+  }
 }
