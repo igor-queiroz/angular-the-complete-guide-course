@@ -1,0 +1,24 @@
+<div class="col-12 border mb-3">
+  <div class="row my-3 offset-3">
+    <div class="col-8">
+      <h4>{{ account?.name }}</h4>
+      <hr />
+    </div>
+    <div class="col-12">
+      <p>This account is {{ account?.status?.toLowerCase() }}</p>
+      <div class="col-8">
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success" (click)="changeStatus('ACTIVE')">
+            Set to Active
+          </button>
+          <button class="btn btn-danger" (click)="changeStatus('INACTIVE')">
+            Set to Inactive
+          </button>
+          <button class="btn btn-secondary" (click)="changeStatus('UNKNOWN')">
+            Set to Unknown
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

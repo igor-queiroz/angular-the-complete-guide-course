@@ -4,12 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ServerFormComponent } from './server-form/server-form.component';
+import { AccountFormComponent } from './account-form/account-form.component';
 import { FormsModule } from '@angular/forms';
-import { ServerComponent } from './server/server.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
-  declarations: [AppComponent, ServerFormComponent, ServerComponent],
+  declarations: [AppComponent, AccountFormComponent, AccountComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

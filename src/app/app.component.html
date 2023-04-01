@@ -1,25 +1,9 @@
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <h3>Add new server or blueprints</h3>
+        <app-account-form/>
+        <div class="row mx-10">
+            <div class="col-12">
+                <hr>
+            </div>
+            <app-account *ngFor="let account of accountsList" [account]="account"/>
         </div>
-    </div>
-
-    <app-server-form (addServerEvent)="onAddServer($event)"/>
-    <div class="row mt-3">
-        <div class="col-5 d-flex col-gap">
-            <button class="btn btn-warning" (click)="changedFirstServerName()">Change First Server</button>
-            <button class="btn btn-danger" (click)="destroyServerComponent()">Activate Destroy Hook</button>
-        </div>
-    </div>
-    <app-server *ngFor="let server of serversList" [serverName]="server.name">
-        <!-- binds property bind server object -->
-        <!-- <app-server *ngFor="let server of serversList" [server]="server"> -->
-        <!-- This works because of ng-content in app-server component -->
-          <div class="col-12 p-2">
-            <p>
-              {{ server.content }}
-            </p>
-          </div>
-    </app-server>
 </div>

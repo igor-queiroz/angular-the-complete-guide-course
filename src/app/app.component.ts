@@ -1,27 +1,17 @@
-import { Component } from '@angular/core';
-
-interface Server {
-  name: string;
-  content: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { Account, AccountService } from './account.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  serversList: Server[] = [];
+export class AppComponent implements OnInit {
+  public accountsList: Account[] = [];
 
-  public onAddServer(event: Server) {
-    this.serversList.push(event);
-  }
+  constructor(private readonly accountService: AccountService) {}
 
-  public changedFirstServerName() {
-    this.serversList[0].name = 'Name Changed By Button';
-  }
-
-  public destroyServerComponent() {
-    this.serversList.pop();
+  ngOnInit() {
+    this.accountsList = this.accountService.accountsList;
   }
 }
