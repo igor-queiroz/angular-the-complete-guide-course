@@ -1,9 +1,2 @@
-<div class="container">
-        <app-account-form/>
-        <div class="row mx-10">
-            <div class="col-12">
-                <hr>
-            </div>
-            <app-account *ngFor="let account of accountsList" [account]="account"/>
-        </div>
-</div>
+<app-header/>
+<router-outlet></router-outlet>
